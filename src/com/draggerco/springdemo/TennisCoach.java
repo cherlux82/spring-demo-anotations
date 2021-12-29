@@ -1,7 +1,11 @@
 package com.draggerco.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,11 +14,11 @@ public class TennisCoach implements Coach {
 	@Autowired
 	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
-	
+
 	public TennisCoach() {
 		System.out.println(">> TennisCoach created with default constructor");
 	}
-	
+
 //	@Autowired
 //	public TennisCoach(FortuneService fortuneService) {
 //		this.fortuneService = fortuneService;
@@ -36,4 +40,13 @@ public class TennisCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">> Doing my statup stuff");
+	}
+
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println(">> Doing my final stuff");
+	}
 }

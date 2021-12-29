@@ -7,9 +7,9 @@ import java.util.logging.SimpleFormatter;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class MyLoggerConfig {
+public class MyLoggerClass {
 
-	public MyLoggerConfig(String rootLoggerLevel, String printedLoggerLevel) {
+	public MyLoggerClass(String rootLoggerLevel, String printedLoggerLevel) {
 
 		// parse levels
 		Level rootLevel = Level.parse(rootLoggerLevel);

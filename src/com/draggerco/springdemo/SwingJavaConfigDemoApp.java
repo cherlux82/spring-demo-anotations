@@ -13,6 +13,10 @@ public class SwingJavaConfigDemoApp {
 
 		System.out.println(tennisCoach.getFortune());
 
+		System.out.println("Team: " + tennisCoach.getEmail());
+
+		System.out.println("Team: " + tennisCoach.getTeam());
+
 		context.close();
 
 	}

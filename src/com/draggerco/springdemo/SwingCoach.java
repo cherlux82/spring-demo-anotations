@@ -1,11 +1,18 @@
 package com.draggerco.springdemo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SwingCoach implements Coach {
 
-	FortuneService fortuneService;
+	private FortuneService fortuneService;
+
+	@Value("${foo.email}")
+	private String email;
+
+	@Value("${foo.team}")
+	private String team;
 
 	@Override
 	public String getDailyWorkout() {
@@ -19,5 +26,13 @@ public class SwingCoach implements Coach {
 
 	public SwingCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
 	}
 }

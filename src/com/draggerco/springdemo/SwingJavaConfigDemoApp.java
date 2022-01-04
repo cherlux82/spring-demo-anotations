@@ -2,7 +2,7 @@ package com.draggerco.springdemo;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class JavaConfigDemoApp {
+public class SwingJavaConfigDemoApp {
 
 	public static void main(String[] args) {
 

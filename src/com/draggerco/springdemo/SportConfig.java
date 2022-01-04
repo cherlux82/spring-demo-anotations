@@ -7,9 +7,20 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan("com.draggerco.springdemo")
+//@ComponentScan("com.draggerco.springdemo")
 @PropertySource("classpath:mylogger.properties")
 public class SportConfig {
+
+	@Bean
+	public FortuneService sadFortuneService() {
+		return new SadFortuneService();
+	}
+
+	@Bean
+	public Coach swingCoach() {
+		return new SwingCoach(sadFortuneService());
+	}
+
 	@Bean
 	public MyLoggerConfig myLoggerConfig(@Value("${root.logger.level}") String rootLoggerLevel,
 			@Value("${printed.logger.level}") String printedLoggerLevel) {

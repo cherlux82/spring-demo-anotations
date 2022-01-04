@@ -13,10 +13,6 @@ public class AnnotationDemoApp {
 		System.out.println(tennisCoach.getDailyWorkout());
 
 		System.out.println(tennisCoach.getFortune());
-		
-		System.out.println(tennisCoach.getEmail());
-		
-		System.out.println(tennisCoach.getTeam());
 
 		context.close();
 
